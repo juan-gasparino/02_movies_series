@@ -1,5 +1,5 @@
 """
-URL configuration for movies_series_api project.
+URL configuration for api_movies_series project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.1/topics/http/urls/
