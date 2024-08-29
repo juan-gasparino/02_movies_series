@@ -32,7 +32,7 @@ class MovieLikeView(APIView):
     API view to like a movie.
     """
     permission_classes = [permissions.IsAuthenticated]
-    def get(self, request, pk):
+    def post(self, request, pk):
         movie = get_object_or_404(Movie, pk=pk)
         movie.likes += 1
         movie.save()
@@ -59,4 +59,5 @@ class MovieFollowView(APIView):
         movie.save()
         return Response({
             'status': f'movie {message}', 
-            'followers': movie.followed_by.count()}, status=status.HTTP_200_OK)
+            'followers': movie.followed_by.count()
+        }, status=status.HTTP_200_OK)
